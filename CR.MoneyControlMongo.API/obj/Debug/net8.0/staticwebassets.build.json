@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "ISvj7YvKknR3D1GArIiIsG8DkR8fCH9zmv8QwpOZi2w=",
+  "Source": "CR.MoneyControlMongo.API",
+  "BasePath": "_content/CR.MoneyControlMongo.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
