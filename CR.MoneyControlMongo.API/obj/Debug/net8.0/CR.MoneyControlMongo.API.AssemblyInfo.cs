@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CR.MoneyControlMongo.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b80dce997f1c33e9f23c6c5ffc3864baf07e5b19")]
 [assembly: System.Reflection.AssemblyProductAttribute("CR.MoneyControlMongo.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CR.MoneyControlMongo.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

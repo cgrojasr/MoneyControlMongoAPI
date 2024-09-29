@@ -1,4 +1,7 @@
+using System.Text;
 using CR.MoneyControlMongo.API.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +15,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//JwtBearer
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(
+    options => {
+        options.TokenValidationParameters = new TokenValidationParameters{
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"])),
+            ValidateIssuer = false,
+            ValidateAudience = false
+        };
+    }
+);
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -22,6 +37,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 
