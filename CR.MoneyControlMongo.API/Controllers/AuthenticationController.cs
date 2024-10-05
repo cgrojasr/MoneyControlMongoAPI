@@ -37,16 +37,16 @@ namespace CR.MoneyControlMongo.API.Controllers
             {
                 var claims = new[] {
                 new Claim(ClaimTypes.Name, $"{usuarioModel.nombre} {usuarioModel.apellido}"),
-                new Claim(ClaimTypes.Email, usuarioModel.correo)
+                new Claim(ClaimTypes.Email, usuarioModel.correo),
+                new Claim(ClaimTypes.Sid, usuarioModel.id)
                 };
 
-                var bytes = Encoding.UTF8.GetBytes(_configuration.GetSection("JWT:Key").Value, []);
-                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration.GetSection("JWT:Key").Value));
+                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration.GetSection("JWT:Key").Value??string.Empty));
                 var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature);
 
                 var securityToken = new JwtSecurityToken(
                     claims: claims,
-                    expires: DateTime.Now.AddMinutes(10),
+                    expires: DateTime.Now.AddHours(1),
                     signingCredentials: credentials
                 );
 
@@ -54,9 +54,9 @@ namespace CR.MoneyControlMongo.API.Controllers
 
                 return token;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
     }
