@@ -46,7 +46,7 @@ namespace CR.MoneyControlMongo.API.Controllers
 
                 var securityToken = new JwtSecurityToken(
                     claims: claims,
-                    expires: DateTime.Now.AddHours(1),
+                    expires: DateTime.Now.AddDays(1),
                     signingCredentials: credentials
                 );
 

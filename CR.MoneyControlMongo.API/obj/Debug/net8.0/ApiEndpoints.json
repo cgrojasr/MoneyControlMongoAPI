@@ -1,0 +1,44 @@
+[
+  {
+    "ContainingType": "CR.MoneyControlMongo.API.Controllers.AuthenticationController",
+    "Method": "Autenticar",
+    "RelativePath": "api/Authentication",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "authenticatorModel",
+        "Type": "CR.MoneyControlMongo.API.Models.AuthenticatorModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CR.MoneyControlMongo.API.Controllers.UsuarioController",
+    "Method": "Listar",
+    "RelativePath": "api/Usuario",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CR.MoneyControlMongo.API.Controllers.UsuarioController",
+    "Method": "Registrar",
+    "RelativePath": "api/Usuario",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioModel",
+        "Type": "CR.MoneyControlMongo.API.Models.UsuarioModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
